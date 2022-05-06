@@ -97,7 +97,7 @@ func (c *serviceCollector) Describe(ch chan<- *prometheus.Desc) {
 	ch <- c.serviceMetric
 }
 
-// Collect implements required collect function for all promehteus collectors
+// Collect implements required collect function for all prometheus collectors
 func (c *serviceCollector) Collect(ch chan<- prometheus.Metric) {
 	for _, service := range c.serviceIndexer.List() {
 		svc := service.(*v1.Service)
